@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/grade-system_59feb89d._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__f00b5236._.js")
+R.c("server/chunks/ssr/c2b09_next_dist_esm_build_templates_app-page_cb534768.js")
+R.c("server/chunks/ssr/[root-of-the-server]__dfbf09ed._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__8251cb0c._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__b96e4d89._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__dabc909a._.js")
+R.c("server/chunks/ssr/c2b09_next_dist_client_components_acdef3a1._.js")
+R.c("server/chunks/ssr/c2b09_next_dist_client_components_builtin_forbidden_dcc1f682.js")
+R.c("server/chunks/ssr/grade-system_frontend__next-internal_server_app__not-found_page_actions_3ef1072f.js")
+R.m(72278)
+module.exports=R.m(72278).exports
