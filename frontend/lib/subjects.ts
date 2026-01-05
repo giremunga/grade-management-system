@@ -1,0 +1,15 @@
+export const SUBJECTS = [
+  "ENGLISH",
+  "KISWAHILI",
+  "MATHEMATICS",
+  "BIOLOGY",
+  "PHYSICS",
+  "CHEMISTRY",
+  "HISTORY AND GOVERNMENT",
+  "GEOGRAPHY",
+  "CHRISTIAN RELIGIOUS EDUCATION",
+  "BUSINESS STUDIES",
+  "AGRICULTURE",
+] as const
+
+export type Subject = (typeof SUBJECTS)[number]

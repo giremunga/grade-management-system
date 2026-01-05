@@ -1,0 +1,16 @@
+{
+  "name": "grade-management-system",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix frontend install",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "start": "npm --prefix frontend run start",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "frontend:build": "npm --prefix frontend run build",
+    "frontend:lint": "npm --prefix frontend run lint",
+    "backend:run": "cd backend && mvn spring-boot:run",
+    "backend:test": "cd backend && mvn test"
+  }
+}
