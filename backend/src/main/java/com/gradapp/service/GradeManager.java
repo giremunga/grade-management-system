@@ -1,11 +1,15 @@
 package com.gradapp.service;
 
 import com.gradapp.model.Student;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class GradeManager {
-    private Map<String, Student> students;
+    private final Map<String, Student> students;
     private int idCounter;
 
     public GradeManager() {
@@ -17,9 +21,10 @@ public class GradeManager {
     // Student Management
   
     
-    public Student addStudent(String name) {
+    public Student addStudent(String name, String email, Map<String, Double> subjectMarks) {
         String id = "STU" + String.format("%04d", idCounter++);
-        Student student = new Student(id, name);
+        Student student = new Student(id, name, email);
+        student.addOrUpdateSubjectMarks(subjectMarks);
         students.put(id, student);
         return student;
     }
@@ -51,6 +56,13 @@ public class GradeManager {
         Student student = students.get(studentId);
         if (student != null) {
             student.removeGrade(gradeIndex);
+        }
+    }
+
+    public void updateSubjectMarks(String studentId, Map<String, Double> subjectMarks) {
+        Student student = students.get(studentId);
+        if (student != null) {
+            student.addOrUpdateSubjectMarks(subjectMarks);
         }
     }
 
@@ -99,25 +111,31 @@ public class GradeManager {
     // Inner DTO class
    
     public static class StudentDTO {
-        private String id;
-        private String name;
-        private double gpa;
-        private List<Double> grades;
-        private String letterGrade;
+        private final String id;
+        private final String name;
+        private final String email;
+        private final double gpa;
+        private final List<Double> grades;
+        private final Map<String, Double> subjectMarks;
+        private final String letterGrade;
 
         public StudentDTO(Student student, String letterGrade) {
             this.id = student.getId();
             this.name = student.getName();
+            this.email = student.getEmail();
             this.gpa = student.getGpa();
             this.grades = new ArrayList<>(student.getGrades());
+            this.subjectMarks = new java.util.LinkedHashMap<>(student.getSubjectMarks());
             this.letterGrade = letterGrade;
         }
 
         // Getters
         public String getId() { return id; }
         public String getName() { return name; }
+        public String getEmail() { return email; }
         public double getGpa() { return gpa; }
         public List<Double> getGrades() { return grades; }
+        public Map<String, Double> getSubjectMarks() { return subjectMarks; }
         public String getLetterGrade() { return letterGrade; }
     }
 }

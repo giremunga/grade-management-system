@@ -1,3 +1,0 @@
-module.exports=[42983,a=>{a.n(a.i(36120))},2187,a=>{a.n(a.i(26877))},5341,a=>{a.n(a.i(55433))},28797,a=>{a.n(a.i(54461))},91136,a=>{a.n(a.i(74462))},74462,(a,b,c)=>{"use strict";Object.defineProperty(c,"__esModule",{value:!0}),Object.defineProperty(c,"default",{enumerable:!0,get:function(){return f}});let d=a.r(86600),e=a.r(35453);function f(){return(0,d.jsx)(e.HTTPAccessErrorFallback,{status:401,message:"You're not authorized to access this page."})}("function"==typeof c.default||"object"==typeof c.default&&null!==c.default)&&void 0===c.default.__esModule&&(Object.defineProperty(c.default,"__esModule",{value:!0}),Object.assign(c.default,c),b.exports=c.default)}];
-
-//# sourceMappingURL=grade-system_59feb89d._.js.map

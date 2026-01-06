@@ -1,7 +1,1 @@
-com\gradapp\controller\GradeController$GradeRequest.class
-com\gradapp\controller\GradeController.class
-com\gradapp\model\Student.class
-com\gradapp\controller\GradeController$StudentRequest.class
-com\gradapp\service\GradeManager.class
-com\gradapp\GradesApplication.class
-com\gradapp\service\GradeManager$StudentDTO.class
+com/gradapp/controller/GradeController$SubjectMarksRequest.class
