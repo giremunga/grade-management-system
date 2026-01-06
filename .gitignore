@@ -2,6 +2,12 @@
 
 # dependencies
 /node_modules
+target/
+*.class
+*.jar
+.vscode/
+node_modules/
+
 
 # next.js
 /.next/

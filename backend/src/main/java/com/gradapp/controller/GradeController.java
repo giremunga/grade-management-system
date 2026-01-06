@@ -16,7 +16,11 @@ public class GradeController {
     
     @PostMapping("/students")
     public GradeManager.StudentDTO addStudent(@RequestBody StudentRequest request) {
-        Student student = gradeManager.addStudent(request.getName());
+        Student student = gradeManager.addStudent(
+                request.getName(),
+                request.getEmail(),
+                request.getSubjectMarks()
+        );
         return gradeManager.getStudentDTO(student);
     }
 
@@ -54,19 +58,41 @@ public class GradeController {
         return gradeManager.getStudentDTO(student);
     }
 
+    @PostMapping("/students/{id}/subjects")
+    public GradeManager.StudentDTO updateSubjectMarks(@PathVariable String id, @RequestBody SubjectMarksRequest request) {
+        gradeManager.updateSubjectMarks(id, request.getSubjectMarks());
+        Student student = gradeManager.getStudent(id);
+        if (student == null) {
+            return null;
+        }
+        return gradeManager.getStudentDTO(student);
+    }
+
     
     
     // REQUEST CLASSES
     
     public static class StudentRequest {
         private String name;
+        private String email;
+        private java.util.Map<String, Double> subjectMarks;
         public String getName() { return name; }
         public void setName(String name) { this.name = name; }
+        public String getEmail() { return email; }
+        public void setEmail(String email) { this.email = email; }
+        public java.util.Map<String, Double> getSubjectMarks() { return subjectMarks; }
+        public void setSubjectMarks(java.util.Map<String, Double> subjectMarks) { this.subjectMarks = subjectMarks; }
     }
 
     public static class GradeRequest {
         private double grade;
         public double getGrade() { return grade; }
         public void setGrade(double grade) { this.grade = grade; }
+    }
+
+    public static class SubjectMarksRequest {
+        private java.util.Map<String, Double> subjectMarks;
+        public java.util.Map<String, Double> getSubjectMarks() { return subjectMarks; }
+        public void setSubjectMarks(java.util.Map<String, Double> subjectMarks) { this.subjectMarks = subjectMarks; }
     }
 }
